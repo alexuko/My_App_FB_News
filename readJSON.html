@@ -1,0 +1,11 @@
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script> 
+  <script>
+  
+  $.getJSON( "sample.json", function( data ) {
+  
+      alert(data.version);
+      alert(data.user_comment);
+      alert(data.author.name);
+      alert(data.items[0].content_html);
+  });
+  </script>
