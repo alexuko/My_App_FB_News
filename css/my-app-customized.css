@@ -1,0 +1,31 @@
+img{
+            border-radius: 30px;
+        }
+
+        .fa {
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 20px;
+            width: auto;
+            height: auto;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 10px;
+        }
+
+.fa:hover {
+            opacity: 0.7;
+}
+
+.fa-facebook {
+            background: #3B5998;
+            color: white;
+}
+#fbLabel{
+            margin-left: 10px;
+            font-family: 'Tahoma';
+            font-size: 20px;
+}

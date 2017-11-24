@@ -8,10 +8,13 @@
     <title>My App</title>
     <!-- Path to Framework7 Library CSS-->
     <link rel="stylesheet" href="../../dist/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="../../dist/css/framework7.material.colors.min.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="css/my-app-customized.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body>
+    <body >
     <!-- Status bar overlay for fullscreen mode-->
     <div class="statusbar-overlay"></div>
     <!-- Panels overlay-->
@@ -19,256 +22,276 @@
     <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal">
       <div class="content-block">
-        <p>Left panel content goes here</p>
+        <p><strong>Name: </strong><big>Roberto Alejandro Rivera Mejia</big></p>
       </div>
     </div>
     <!-- Right panel with cover effect-->
     <div class="panel panel-right panel-cover">
       <div class="content-block">
-        <p>Right panel content goes here</p>
+        <p><strong>Student Number: </strong><big>2015160</big></p>
       </div>
     </div>
     <!-- Views, and they are tabs-->
     <!-- We need to set "toolbar-through" class on it to keep space for our tab bar-->
     <div class="views tabs toolbar-through">
+        
       <!-- Your first view, it is also a .tab and should have "active" class to make it visible by default-->
+        
       <div id="view-1" class="view view-main tab active">
         <!-- Pages-->
+
         <div class="pages">
-          <!-- Page, data-page contains page name-->
+         <!-- Page, data-page contains page name-->
           <div data-page="index-1" class="page">
             <!-- Scrollable page content-->
-            <div class="page-content">
-              <div class="content-block-title">Welcome</div>
-                
-                 
-              <div class="content-block">
-                
-                  
-
-<!--
-  Below we include the Login Button social plugin. This button uses
-  the JavaScript SDK to present a graphical Login button that triggers
-  the FB.login() function when clicked.
--->
-<div id="status"></div>
+            <div class="page-content" align="middle">
+              <div class="content-block-title"><h1 id="inMsj">Login Required</h1></div>
+                <div class="content-block">
+                  <div id='status'></div>
+                  <!-- my FaceBook photo -->
+                  <div id='fbPic'></div> 
 
 
-
-
-<!-- Login & out buttons-->
-<button onclick="logoutPerson()">logout</button>
-
-                  
-<div id="fb-root"></div>
-                  
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10&appId=1537153306379165';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-                  
-<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
-                  
-
-                  
-                <p>And of course, your favorite panels are still here: <a href="#" class="open-panel">left</a> and  <a href="#" data-panel="right" class="open-panel">right</a></p>
+<!---------------------         LOGIN BUTTON        ----------------------------->
+<button id="fBlogIn" onclick="logMeIn()" class="fa fa-facebook" style="display: inline"><span id='fbLabel'> Log in</span></button>                  
+<!----------------------        LOGOUT BUTTON       ----------------------------->
+<button id="fBlogOut" onclick="logMeOut()" class="fa fa-facebook" style="display: none"><span id='fbLabel'> Log out</span></button>                  
+<!--                   -->
+                <p align="middle">Student Details:<br><a href="#" class="open-panel">left</a> and  <a href="#" data-panel="right" class="open-panel">right</a></p>
                   
                 </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Second view (for second wrap)-->
-      <div id="view-2" class="view tab">
+<!--         Second view (for second wrap)          -->
+        <div id="view-2" class="view tab">
         <!-- We can make with view with navigation, let's add Top Navbar-->
         <div class="navbar">
           <div class="navbar-inner">
-            <div class="center sliding">Second View</div>
+            <div class="center sliding">Business News</div>
+          </div>
+        </div>
+        <div class="pages navbar-through">
+        <div data-page="index-2" class="page">
+            <div class="page-content">
+              <div class="content-block">
+<!--       news           -->
+                 <div id="Business">Business new here</div>
+<!--       news           -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--         Third view (for third wrap)          -->        
+          <div id="view-3" class="view tab">
+        <!-- We can make with view with navigation, let's add Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="center sliding">Sports News</div>
+          </div>
+        </div>
+        <div class="pages navbar-through">
+        <div data-page="index-2" class="page">
+            <div class="page-content">
+              <div class="content-block">
+<!--       news           -->
+                  <div id="Sports">Sport news here</div>      
+<!--       news           -->                  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--         Fourth view (for fourth wrap)          -->        
+          <div id="view-4" class="view tab">
+        <!-- We can make with view with navigation, let's add Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="center sliding">Financial News</div>
+          </div>
+        </div>
+        <div class="pages navbar-through">
+        <div data-page="index-2" class="page">
+            <div class="page-content">
+              <div class="content-block">
+<!--       news           -->
+                 <div id="Financial">Financial news here</div>
+<!--       news           -->                  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--         Fifth view (for fifth wrap)          -->        
+        <div id="view-5" class="view tab">
+        <!-- We can make with view with navigation, let's add Top Navbar-->
+        <div class="navbar">
+            <div class="navbar-inner" data-page="index">
+                <div class="center sliding">Newsroom</div>
+            </div>
+        </div>
+        <div class="pages navbar-through cached">
+            <div data-page="cctNews" class="page">
+            <div class="page-content">
+
+<!--  list of CCT news and Authors -->                
+                <div class="list-block">
+                 <div class="content-block-title">CCT news here</div>
+                <ul>
+                  <li onclick="showCctNews('stories')"><a href="#top10stories" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner"> 
+                          <div class="item-title">Top 10 Stories</div>
+                        </div>
+                      </div></a></li>
+                  <li onclick="showCctNews('authors')"><a href="#authors" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title">Authors</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#newStories" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title">Add New Stories</div>
+                        </div>
+                      </div></a>
+                  </li>
+                  <li onclick="showCctNews('myNews')"><a href="#madeUpStories" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title">View New Stories</div>
+                        </div>
+                      </div></a>
+                  </li>  
+                </ul>
+              </div>
+<!-- end of the list-->
+            </div>
+          </div>
+<!--Top10stories page-->            
+            <div data-page="top10stories" class="page cached">
+              <div class="page-content"><br>
+                <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>      
+                  <div class="content-block">
+                    <div class="list-block">
+                      <div class="content-block-title">Top 10 Stories</div>
+                      <ul><div id="stories"></div>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+            </div>
+<!--Authors page-->             
+                <div data-page="authors" class="page cached">
+                  <div class="page-content"><br>
+                    <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>      
+                      <div class="content-block">
+                        <div class="list-block">
+                          <div class="content-block-title">Authors</div>
+                          <ul><div id="authors"></div>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+<!--New Stories page-->              
+                <div data-page="newStories" class="page cached">
+                  <div class="page-content"><br>
+                    <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>      
+                      <div class="content-block">
+                        <div class="list-block">
+                          <div class="content-block-title">New Stories</div>
+                    <p class="buttons-row"><a onclick="sendStory()" class="button button-fill">Send Story</a></p>
+                       <ul>
+                          <li>
+                            <div class="item-content">
+                              <div class="item-media"><i class="icon    f7-icons"></i></div>
+                              <div class="item-inner"> 
+                                <div class="item-title label">Story</div>
+                                  <form id="myForm">
+                                      <div class="item-input">
+                                          <input type="url" name="myStory" placeholder="Type your story here! ">
+                                      </div>
+                                  </form>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <b><div id="label" align="middle"></div></b>                                
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                 <div data-page="madeUpStories" class="page cached">
+                  <div class="page-content"><br>
+                    <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>      
+                      <div class="content-block">
+                        <div class="list-block">
+                          <div class="content-block-title">My Stories</div>
+                          <ul>
+                            <div id="myNews">my Stories are going here</div>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+<!--     End of pages on view 5    -->            
+               </div>
+              </div>
+<!--         Sixth view (for sixth wrap)          -->        
+      <div id="view-6" class="view tab">
+        <!-- We can make with view with navigation, let's add Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="center sliding">JSON Generator</div>
           </div>
         </div>
         <div class="pages navbar-through">
           <div data-page="index-2" class="page">
             <div class="page-content">
               <div class="content-block">
-                <p>This is a second view. Lets, for example, have here some internal pages with navbar navigation</p>
-              </div>
-              <div class="list-block">
-               <ul>
-                  <li>
-                    <a href="about.html" class="item-link">
-                      <div class="item-content">
-                        <div class="item-inner"> 
-                          <div class="item-title">NEWS FEED</div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                <li><a href="services.html" class="item-link">
-                      <div class="item-content"> 
-                        <div class="item-inner">
-                          <div class="item-title">Services</div>
-                        </div>
-                      </div></a>
-                </li> 
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="view-3" class="view tab">
-        <div class="pages">
-          <div data-page="index-3" class="page">
-            <div class="page-content">
-              <div class="content-block-title">Another plain static view</div>
-              <div class="content-block">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel commodo massa, eu adipiscing mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus ultricies dictum neque, non varius tortor fermentum at. Curabitur auctor cursus imperdiet. Nam molestie nisi nec est lacinia volutpat in a purus. Maecenas consectetur condimentum viverra. Donec ultricies nec sem vel condimentum. Phasellus eu tincidunt enim, sit amet convallis orci. Vestibulum quis fringilla dolor.    </p>
-                <p>Mauris commodo lacus at nisl lacinia, nec facilisis erat rhoncus. Sed eget pharetra nunc. Aenean vitae vehicula massa, sed sagittis ante. Quisque luctus nec velit dictum convallis. Nulla facilisi. Ut sed erat nisi. Donec non dolor massa. Mauris malesuada dolor velit, in suscipit leo consectetur vitae. Duis tempus ligula non eros pretium condimentum. Cras sed dolor odio.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel commodo massa, eu adipiscing mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus ultricies dictum neque, non varius tortor fermentum at. Curabitur auctor cursus imperdiet. Nam molestie nisi nec est lacinia volutpat in a purus. Maecenas consectetur condimentum viverra. Donec ultricies nec sem vel condimentum. Phasellus eu tincidunt enim, sit amet convallis orci. Vestibulum quis fringilla dolor.    </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="view-4" class="view tab">
-        <div class="pages navbar-fixed">
-          <div data-page="index-4" class="page">
-            <div class="navbar">
-              <div class="navbar-inner">
-                <div class="center">Settings</div>
-              </div>
-            </div>
-            <div class="page-content">
-              <div class="list-block">
-                <ul>
-                  <li>
-                    <div class="item-content">
-                      <div class="item-media"><i class="icon icon-form-name"></i></div>
-                      <div class="item-inner"> 
-                        <div class="item-title label">Name</div>
-                        <div class="item-input">
-                          <input type="text" placeholder="Your name">
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="item-content">
-                      <div class="item-media"><i class="icon icon-form-email"></i></div>
-                      <div class="item-inner"> 
-                        <div class="item-title label">E-mail</div>
-                        <div class="item-input">
-                          <input type="email" placeholder="E-mail">
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="item-content">
-                      <div class="item-media"><i class="icon icon-form-url"></i></div>
-                      <div class="item-inner"> 
-                        <div class="item-title label">URL</div>
-                        <div class="item-input">
-                          <input type="url" placeholder="URL">
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="item-content">
-                      <div class="item-media"><i class="icon icon-form-password"></i></div>
-                      <div class="item-inner"> 
-                        <div class="item-title label">Password</div>
-                        <div class="item-input">
-                          <input type="password" placeholder="Password">
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="item-content">
-                      <div class="item-media"><i class="icon icon-form-tel"></i></div>
-                      <div class="item-inner"> 
-                        <div class="item-title label">Phone</div>
-                        <div class="item-input">
-                          <input type="tel" placeholder="Phone">
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="item-content">
-                      <div class="item-media"><i class="icon icon-form-gender"></i></div>
-                      <div class="item-inner"> 
-                        <div class="item-title label">Gender</div>
-                        <div class="item-input">
-                          <select>
-                            <option>Male</option>
-                            <option>Female</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="item-content">
-                      <div class="item-media"><i class="icon icon-form-calendar"></i></div>
-                      <div class="item-inner"> 
-                        <div class="item-title label">Birth date</div>
-                        <div class="item-input">
-                          <input type="date" placeholder="Birth day" value="2014-04-30">
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="item-content">
-                      <div class="item-media"><i class="icon icon-form-toggle"></i></div>
-                      <div class="item-inner"> 
-                        <div class="item-title label">Switch</div>
-                        <div class="item-input">
-                          <label class="label-switch">
-                            <input type="checkbox">
-                            <div class="checkbox"></div>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="item-content">
-                      <div class="item-media"><i class="icon icon-form-settings"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title label">Slider</div>
-                        <div class="item-input">
-                          <div class="range-slider">
-                            <input type="range" min="0" max="100" value="50" step="0.1">
+<!--       JSON            -->
+                  <p class="buttons-row"><a onclick="generateJson()" class="button button-fill color-red">Generate JSON</a></p>
+                   <div class="list-block">
+                      <ul>
+                        <li class="align-top">
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="item-input">
+                                <textarea id="jsonOutput" placeholder="JSON Generated appears here!" class="resizable"></textarea>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
+                        </li>
+                      </ul>
                     </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="content-block">
-                <p>Mauris commodo lacus at nisl lacinia, nec facilisis erat rhoncus. Sed eget pharetra nunc. Aenean vitae vehicula massa, sed sagittis ante. Quisque luctus nec velit dictum convallis. Nulla facilisi. Ut sed erat nisi. Donec non dolor massa. Mauris malesuada dolor velit, in suscipit leo consectetur vitae. Duis tempus ligula non eros pretium condimentum. Cras sed dolor odio.</p>
-              </div>
+<!--       JSON          -->                  
+            </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Bottom Tabbar-->
-      <div class="toolbar tabbar tabbar-labels">
-        <div class="toolbar-inner"><a href="#view-1" class="tab-link active"> <i class="icon tabbar-demo-icon-1"></i><span class="tabbar-label">Information</span></a><a href="#view-2" class="tab-link"><i class="icon tabbar-demo-icon-2"></i><span class="tabbar-label">Inbox</span></a><a href="#view-3" class="tab-link"> <i class="icon tabbar-demo-icon-3"><span class="badge bg-red">4</span></i><span class="tabbar-label">Upload</span></a><a href="#view-4" class="tab-link"> <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label">Photos</span></a></div>
+
+<!--             Bottom Tabbar              -->
+      <div style="display: none" id="toolB" class="toolbar tabbar tabbar-labels">
+        <div class="toolbar-inner">
+            <a href="#view-1" class="tab-link active"><img src="images/home.png" class="icon" width='30' height='30'><span class="tabbar-label">LogIn</span></a>
+            <a href="#view-2" class="tab-link" onclick="displayNews('Business')"><img src="images/business.png" class="icon" width='30' height='30'><span class="tabbar-label">Business</span></a>
+            <a href="#view-3" class="tab-link" onclick="displayNews('Sports')"><img src="images/Athletics.png" class="icon" width='30' height='30'><span class="tabbar-label">Sports</span></a>
+            <a href="#view-4" class="tab-link" onclick="displayNews('Financial')"><img src="images/Finance.png" class="icon" width='30' height='30'><span class="tabbar-label">Financial</span></a>
+            <a href="#view-5" class="tab-link" ><img src="images/news.png" class="icon" width='30' height='30'><span class="tabbar-label">CCT</span></a>
+            <a href="#view-6" class="tab-link"><img src="images/json.png" class="icon" width='30' height='30'><span class="tabbar-label">JSON</span></a>
+          </div>
       </div>
     </div>
     <!-- Path to Framework7 Library JS-->
     <script type="text/javascript" src="../../dist/js/framework7.min.js"></script>
     <!-- Path to your app js-->
     <script type="text/javascript" src="js/my-app.js"></script>
+      <!-- Path to your JQuery-->
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
   </body>
 </html>
